@@ -40,4 +40,31 @@ const employees = [
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
 
-console.log( employees );
+function employeeCalculator(employees) {
+  let newObj = {
+    name: '',
+    bonusPercentage: '',
+    totalCompensation: '',
+    totalBonus: ''
+  };
+  for (let i = 0; i < employees.length; i++) {
+    if (employees[i].reviewRating <= 2) {
+      console.log(newObj.bonusPercentage);
+      newObj.bonusPercentage = 0;
+    }
+    else if (employees[i].reviewRating === 3) {
+      console.log(newObj.bonusPercentage);
+      newObj.bonusPercentage = 1;
+    }
+    
+  }
+  return newObj;
+}
+// Atticus rating 3, bonus 4% and 5% bonus = 9% total
+// Jem rating 4, bonus 6%
+// Scout rating 5, bonus 10% and 5% bonus = 15 % total but max 13%, maybe 12
+// Robert rating 1, no bonus
+// Mayella rating 1, no bonus
+
+console.log(employeeCalculator(employees));
+
